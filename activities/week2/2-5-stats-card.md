@@ -31,7 +31,7 @@ dbc.Card([
 )
 ```
 
-Modify the existing Card code so that is a function:
+Modify the existing Card code so that it is a function:
 
 - The function takes a string in the format 'host year' as a parameter. This scatter geo currently uses this for each
   map marker.
