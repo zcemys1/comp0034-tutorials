@@ -1,4 +1,4 @@
-# Testing a Dash app from the Chrome web browser
+# 1. Intro to testing a Dash app from the Chrome web browser
 
 ## Introduction
 

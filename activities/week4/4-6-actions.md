@@ -1,6 +1,17 @@
-# Test that involve sequences of user actions
+# 6. Write tests that involve sequences of user actions
 
-## Test specification
+## Concept: Action chains
+
+[Selenium interaction functions](https://www.selenium.dev/documentation/webdriver/elements/interactions/) include
+click(), send_keys(), submit() and clear(). Some interactions, such as `hover` are only available in
+the [Actions API](https://www.selenium.dev/documentation/webdriver/actions_api/).
+
+The Actions API provides ActionChains. This allows you to 'chain', or add together, sequences of
+interactions.
+
+## Writing the test
+
+### Write a test that verifies changes to the card when a map marker is hovered/selected
 
 The test spec is:
 
@@ -18,13 +29,6 @@ An approach for this test is:
 - Find the map
 - Find a map marker and hover which should display a card.
 - Find the card, the title should change.
-
-[Selenium interaction functions](https://www.selenium.dev/documentation/webdriver/elements/interactions/) include
-click(), send_keys(), submit() and clear(). They do not include `hover`. Instead, use
-the [Actions API](https://www.selenium.dev/documentation/webdriver/actions_api/).
-
-The Actions API supports a wider range of interactions and allows you to 'chain', or add together sequences of
-interactions.
 
 ## Test code
 
@@ -73,9 +77,9 @@ def test_map_marker_select_updates_card(dash_duo):
 
 Run the test.
 
-## Try it yourself
+### Try it yourself
 
-Try to identify another test involving a sequence of actions. For example, modify the test you created in the previous
-activity and alter it to use an action chain.
+Try to identify another test involving a sequence of actions; or modify a test you created in an earlier activity to use
+an action chain.
 
-[Next activity](4-6-complex-selector.md)
+[Next activity](4-7-further-info.md)

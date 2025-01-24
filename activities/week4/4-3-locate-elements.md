@@ -1,6 +1,7 @@
-# Write a test that uses the chrome driver to navigate elements on the page
+# 3. Write tests that use Selenium webdriver to navigate elements on the page
 
-This example uses the chrome driver, not requests, to navigate to a URL.
+## Introduction
+This example uses the Selenium webdriver and the chrome driver, not requests, to navigate to a URL.
 
 The driver allows you to navigate the web page and carry out actions such as clicking, selecting, entering data in forms
 etc.
@@ -96,7 +97,8 @@ value = driver.find_element(By.CSS_SELECTOR, "input[type='checkbox']:first-of-ty
 text = driver.find_element(By.CSS_SELECTOR, "h1").text
 ```
 
-## Write a test: that checks the text content of the H1 heading
+## Writing the test
+### Test that checks the text content of the H1 heading
 
 This example waits until an element, the 'h1' heading appears, rather than waiting a set amount of time as was used in
 the previous test. It then checks that the heading text is 'Paralympics Dashboard'.
@@ -127,7 +129,7 @@ def test_home_h1_text_equals(dash_duo):
 
 Run the test.
 
-## Further tests
+### Further tests
 
 Try and identify at least one more similar test that finds an element on a page and then asserts a value from that
 element. For example, find the dropdown selector and check it has one of the expected values (events, sports,
