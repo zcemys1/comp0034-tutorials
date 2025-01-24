@@ -1,4 +1,4 @@
-# Testing from the web browser
+# Testing a Dash app from the Chrome web browser
 
 ## Introduction
 

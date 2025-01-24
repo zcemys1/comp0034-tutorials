@@ -1,17 +1,34 @@
 # Test that involve sequences of user actions
 
-For this test:
+## Test specification
+
+The test spec is:
+
+```text
+    GIVEN the app is running which has a <div id='map>
+    THEN there should not be any elements with a class of 'card' one the page
+    WHEN a marker in the map is selected
+    THEN there should be one more card on the page then there was at the start
+    AND there should be a text value for the h6 heading in the card
+```
+
+An approach for this test is:
 
 - Find the id for the card and find the title element
-- Find the map 
+- Find the map
 - Find a map marker and hover which should display a card.
 - Find the card, the title should change.
 
 [Selenium interaction functions](https://www.selenium.dev/documentation/webdriver/elements/interactions/) include
-click(), send_keys(), submit() and clear().
-
-These don't cover this case where we want to hover. Instead, use
+click(), send_keys(), submit() and clear(). They do not include `hover`. Instead, use
 the [Actions API](https://www.selenium.dev/documentation/webdriver/actions_api/).
+
+The Actions API supports a wider range of interactions and allows you to 'chain', or add together sequences of
+interactions.
+
+## Test code
+
+The test code might look like this:
 
 ```python
 from selenium.webdriver import ActionChains
@@ -58,10 +75,7 @@ Run the test.
 
 ## Try it yourself
 
-Run the Dash app so that you know what it contains.
-
-Try to identify a few more tests you could write.
-
-Write the tests and try running them.
+Try to identify another test involving a sequence of actions. For example, modify the test you created in the previous
+activity and alter it to use an action chain.
 
 [Next activity](4-6-complex-selector.md)

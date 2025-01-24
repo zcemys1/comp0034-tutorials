@@ -155,3 +155,5 @@ def test_bar_chart_updates(dash_duo):
 ```
 
 Implement the code and run the test.
+
+[Next activity](4-5-actions.md)
