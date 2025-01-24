@@ -13,7 +13,7 @@ the `<div id='map'>` then `<div class=plot-container plotly>` section until you 
 and then the one with `class=infolayer` then `class=g-gtitle`. Once you find the title, if you right-click there are
 options to 'copy selector' and 'copy full Xpath'.
 
-![Chrome Inspector to find css selector or xpath](chrome-selector.png)
+![Chrome Inspector to find css selector or xpath](../img/chrome-selector.png)
 
 If you copy the selector, you can then paste to this to your code to define the element:
 
@@ -121,3 +121,5 @@ def test_map_marker_hover_updates_card(dash_duo):
 ```
 
 Run the test.
+
+[Next activity](4-7-further-info.md)

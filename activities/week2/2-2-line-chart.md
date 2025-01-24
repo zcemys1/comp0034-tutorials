@@ -1,4 +1,4 @@
-# Activity 2.1 Line chart
+# 1. Line chart
 
 In this activity you will create a line chart using Plotly Express. The data will be read into a pandas DataFrame from a .csv
 file.

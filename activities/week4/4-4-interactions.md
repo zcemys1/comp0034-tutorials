@@ -39,7 +39,7 @@ For example, to complete and submit a form with a first-name field:
 from selenium.webdriver.common.by import By
 
 # Find the element
-firt_name = driver.find_element(By.name, "first-name")
+first_name = driver.find_element(By.name, "first-name")
 # Enter the text "Charles"
 first_name.send_keys("Charles")
 # Fina and click on the form submit button
@@ -67,8 +67,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-# Implicit wait
-# Wait for 2 seconds
+# Implicit wait for 2 seconds
 driver.implicitly_wait(2)
 
 # Wait for 10 seconds until the element with ID of "myElement" is present on the web page
@@ -106,12 +105,14 @@ You can also use other Python libraries to introduce a wait, e.g. `time.sleep(2)
 seconds. This can be useful if you want to wait before the driver has been initialised.
 
 ## Write a test: test that when you click on a checkbox that the bar chart updates
-
+The test specification is:
+```text
 GIVEN the app is loaded
 AND a checkbox is present on the page
-AND a bar chart is displayed on the pahe
+AND a bar chart is displayed on the page
 WHEN the checkbox selection is changed
 THEN the chart should be updated
+```
 
 You will need to decide how to assert that the chart has updated. For example, check the number and ids of the chart
 elements in the column that contains the bar charts.

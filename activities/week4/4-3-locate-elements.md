@@ -1,6 +1,6 @@
 # Write a test that uses the chrome driver to navigate elements on the page
 
-This example uses the chrome driver, not requests, to navigate to a url.
+This example uses the chrome driver, not requests, to navigate to a URL.
 
 The driver allows you to navigate the web page and carry out actions such as clicking, selecting, entering data in forms
 etc.
@@ -69,7 +69,7 @@ The Dash browser API finds elements by their CSS selector. These are:
 
 - `#id` to find an element with an id, e.g. `#line-chart` to find an element with an id of 'line-chart'
 - HTML TAG to find en element by its html tag name e.g. `p` to find all `<p>` elements
-- .class to find an element by CSS class name, e..g. `.alert` to find all elements with a `class="alert"` (or
+- .class to find an element by CSS class name, e.g. `.alert` to find all elements with a `class="alert"` (or
   className="alert" in Dash).
 
 Using either API you can find either a single element `find_element`, or all elements that match a condition
@@ -105,7 +105,7 @@ the previous test. It then checks that the heading text is 'Paralympics Dashboar
 from dash.testing.application_runners import import_app
 
 
-def test_home_h1textequals(dash_duo):
+def test_home_h1_text_equals(dash_duo):
     """
     GIVEN the app is running
     WHEN the home page is available
@@ -133,4 +133,4 @@ Try and identify at least one more similar test that finds an element on a page 
 element. For example, find the dropdown selector and check it has one of the expected values (events, sports,
 countries).
 
-[Next activity](4-3-interactions.md)
+[Next activity](4-4-interactions.md)

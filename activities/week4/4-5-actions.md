@@ -64,20 +64,4 @@ Try to identify a few more tests you could write.
 
 Write the tests and try running them.
 
-## Other techniques
-
-## Links
-
-Dash have [tests for their code in GitHub](https://github.com/plotly/dash/tree/dev/tests). It can be useful
-to see how they structure their own tests.
-
-[Sean McCarthy's Dash testing tutorial](https://mccarthysean.dev/005-03-Dash-Testing). He uses the dash_thread_server
-and dash_br fixtures rather than dash_duo, however it gives a number of examples of different ways to select elements on
-the page for testing.
-
-[Building unit tests for dash applications](https://plotly.com/blog/building-unit-tests-for-dash-applications/). This
-goes beyond what is expected for the coursework and tests callbacks and uses mocks. Useful if you are already familiar
-with testing and want to expand your knowledge.
-
-[Plotly Dash Testing official documentation](https://dash.plotly.com/testing)
-
+[Next activity](4-6-complex-selector.md)
