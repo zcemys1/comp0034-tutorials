@@ -1,6 +1,6 @@
-# Activity 2.1 Line chart
+# 1. Line chart
 
-In this activity you will create a line chart using Plotly Express. The will be read into a pandas DataFrame from a .csv
+In this activity you will create a line chart using Plotly Express. The data will be read into a pandas DataFrame from a .csv
 file.
 
 ## Create the chart
@@ -9,7 +9,7 @@ Add a [Plotly Express line chart](https://plotly.com/python-api-reference/genera
 displays for each paralympics the total number of events, competitors and sports. The data will be displayed over time,
 i.e. from 1960 through to 2022.
 
-The data is in `data/paralympic_events.csv`. The columns needed
+The data is in `data/paralympics.csv`. The columns needed
 are: `["type", "year", "host", "events", "sports", "participants", "countries"]`.
 
 You do not have to put the chart code in a function but doing so can make it easier when you later add callbacks (next
@@ -25,7 +25,6 @@ from importlib import resources
 
 import pandas as pd
 import plotly.express as px
-import pathlib
 
 
 def line_chart(feature):
@@ -51,18 +50,26 @@ def line_chart(feature):
 
     # Read the data from .csv into a DataFrame
     cols = ["type", "year", "host", feature]
-    # path to paralympic data
-    path = pathlib.Path(__file__).parent.parent / "data" / "paralympics.csv"
+    # Uses importlib.resources rather than pathlib.Path
+    with resources.path("data", "paralympics.csv") as path:
+        line_chart_data = pd.read_csv(path, usecols=cols)
 
-    line_chart_data = pd.read_csv(path, usecols=cols)
+        # Create a Plotly Express line chart with the following parameters
+        #    line_chart_data is the DataFrame
+        #    x="year" is the column to use as the x-axis
+        #    y=feature is the column to use as the y-axis
+        #    color="type" indicates if winter or summer
+        fig = px.line(line_chart_data, x="year", y=feature, color="type")
+        return fig
+```
 
-    # Create a Plotly Express line chart with the following parameters
-    #    line_chart_data is the DataFrame
-    #    x="year" is the column to use as the x-axis
-    #    y=feature is the column to use as the y-axis
-    #    color="type" indicates if winter or summer
-    fig = px.line(line_chart_data, x="year", y=feature, color="type")
-    return fig
+Note that if `importlib.resources` does not work for you, you can use pathlib instead e.g.
+
+```python
+import pathlib
+
+# path to paralympic data
+path = pathlib.Path(__file__).parent.parent.joinpath("data", "paralympics.csv")
 ```
 
 You can either add the code to the main dash app file, or create a new python file with the code to create chart with a
@@ -115,7 +122,13 @@ Amend the code that creates the line chart to:
 1. Set the figure title to "How has the number of {feature} changed over time?":
    `title=f"How has the number of {feature} changed over time?"`
 2. Change the axis labels to remove the word 'feature' from the Y axis and change the X axis label
-   to start with a capital letter: e.g.`labels={feature: "", "year": "Year"}`
+   to start with a capital letter: e.g.
+   ```python
+   labels = { 
+                 "feature": "",
+                 "year": "Year"
+             }
+   ```
 3. Use a template to apply a more simple style that has no background, e.g., `template="simple_white"`
 
 Check the app is running, it should now display the line chart with the revised styling.

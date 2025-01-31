@@ -1,4 +1,4 @@
-# 3. Create a responsive layout using a 12-column grid layout with Bootstrap
+# 5. Create a responsive layout using a 12-column grid layout with Bootstrap
 
 ## Responsive design with CSS
 
@@ -14,11 +14,11 @@ To create a web page that is responsive:
 - Optionally, use a grid layout
 
 The **viewport** is the visible area inside the browser window. A `<meta>` viewport element gives the browser
-instructions on how to control the page's dimensions and scaling. For example the following code would be placed in the `<head>` section of a html
+instructions on how to control the page's dimensions and scaling. This gives the browser instructions on how to control
+the page's dimensions and scaling. For example the following code would be placed in the `<head>` section of a html
 document.
 
 ```html
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
@@ -135,4 +135,4 @@ app.layout = dbc.Container([
 ])
 ```
 
-[Next activity](1-5-add-html-components.md)
+[Next activity](1-6-add-html-components.md)

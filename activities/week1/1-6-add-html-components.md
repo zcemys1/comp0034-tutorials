@@ -1,4 +1,4 @@
-# 4. Adding HTML components to the layout
+# 6. Adding HTML components to the layout
 
 In this activity you will add the HTML components to the layout. Chart components will be added next week.
 
@@ -91,7 +91,7 @@ For example to define responsive images using the image files in the `/assets` d
 ```python
 # Column 1 children
 # className="img-fluid" is a Bootstrap class and prevents the image spanning the next column
-html.Img(src=app.get_asset_url('line-chart-placeholder.png'), className="img-fluid"),
+html.Img(src=app.get_asset_url('event-chart-placeholder.png'), className="img-fluid"),
 
 # Column 2 children
 html.Img(src=app.get_asset_url('bar-chart-placeholder.png'), className="img-fluid"),
@@ -99,7 +99,7 @@ html.Img(src=app.get_asset_url('bar-chart-placeholder.png'), className="img-flui
 
 #### Row 4
 
-The fourth row has:
+The third row has:
 
 - column 1: a map visualisation with markers for events. Add a placeholder image for now.
 - column 2: a card that displays details for a selected paralympic event, this will be dynamically generated when the
@@ -129,4 +129,4 @@ dbc.Card([
 Run the app and check it displays as you expected. The design could be improved so feel free to make any changes you
 wish!
 
-[Next activity](1-6-multipage-app.md)
+[Next activity](1-7-multipage-app.md)
