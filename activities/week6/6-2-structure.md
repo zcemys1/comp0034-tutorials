@@ -11,31 +11,28 @@ file that breaks the principles of a good design.
 
 A more
 typical [Flask application structure is to define packages](https://flask.palletsprojects.com/en/stable/patterns/packages/).
-This is what you should aim for in your coursework.
+This is what you should aim for in your coursework. Note that if you created a copy of the GitHub classroom coursework assigment this puts the "/flaskappname" part of the directory tree within an "src" folder.
 
-We will move towards this in the tutorials also.
+The file and folder structure will look something like this:
 
-The folder structure will look like this:
-
-```text 
+```text
 /your_project_name
-    / src
-        /.instance
-            database.db  (Flask instance folder with the database)
-        /flask_app_name
-            __init__.py (you will define a function here that creates and configures the Flask app object)
-            models.py  (Python classes that map to the SQL database tables)
-            routes.py  (Flask routes)
-            helpers.py (helper functions used in the routes)
-            /static
-                /css
-                    (Bootstrap css files)
-                /js
-                    (Bootstrap JavaScript files)
-            /templates
-                layout.html
-                index.html
-                ... any other HTML templates
+    /.instance
+        database.db  (Flask instance folder with the database)
+    /flask_app_name
+        __init__.py (you will define a function here that creates and configures the Flask app object)
+        models.py  (Python classes that map to the SQL database tables)
+        routes.py  (Flask routes)
+        helpers.py (helper functions used in the routes)
+        /static
+            /css
+                (Bootstrap css files)
+            /js
+                (Bootstrap JavaScript files)
+        /templates
+            layout.html
+            index.html
+            ... any other HTML templates
     /tests
         conftest.py
         test_some_name.py
@@ -45,7 +42,7 @@ The folder structure will look like this:
     requirements.txt
 ```
 
-This is not the only structure you can use. Other tutorials and examples will separate the app into packages and
+This is not the only structure you can use. For example, you may see examples that separate the app into packages and
 use Flask Blueprints to 'modularise' the functionality.
 
 ## Creating the app using the Factory pattern
