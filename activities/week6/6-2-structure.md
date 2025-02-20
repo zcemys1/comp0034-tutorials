@@ -19,22 +19,23 @@ The folder structure will look like this:
 
 ```text 
 /your_project_name
-    /.instance
-        database.db  (Flask instance folder with the database)
-    /flask_app_name
-        __init__.py (you will define a function here that creates and configures the Flask app object)
-        models.py  (Python classes that map to the SQL database tables)
-        routes.py  (Flask routes)
-        helpers.py (helper functions used in the routes)
-        /static
-            /css
-                (Bootstrap css files)
-            /js
-                (Bootstrap JavaScript files)
-        /templates
-            layout.html
-            index.html
-            ... any other HTML templates
+    / src
+        /.instance
+            database.db  (Flask instance folder with the database)
+        /flask_app_name
+            __init__.py (you will define a function here that creates and configures the Flask app object)
+            models.py  (Python classes that map to the SQL database tables)
+            routes.py  (Flask routes)
+            helpers.py (helper functions used in the routes)
+            /static
+                /css
+                    (Bootstrap css files)
+                /js
+                    (Bootstrap JavaScript files)
+            /templates
+                layout.html
+                index.html
+                ... any other HTML templates
     /tests
         conftest.py
         test_some_name.py
