@@ -11,7 +11,8 @@ file that breaks the principles of a good design.
 
 A more
 typical [Flask application structure is to define packages](https://flask.palletsprojects.com/en/stable/patterns/packages/).
-This is what you should aim for in your coursework. Note that if you created a copy of the GitHub classroom coursework assigment this puts the "/flaskappname" part of the directory tree within an "src" folder.
+This is what you should aim for in your coursework. Note that if you created a copy of the GitHub classroom coursework
+assigment this puts the "/flaskappname" part of the directory tree within an "src" folder.
 
 The file and folder structure will look something like this:
 
@@ -71,7 +72,8 @@ it. You need to be able to do this for some of the packages that you will use to
 2. Add a function that must be named `create_app`. The code below is based on the `create_app()` function from
    the [Flask tutorial application setup](https://flask.palletsprojects.com/en/stable/tutorial/factory/#application-setup)
    without the routes. The routes will be in a separate python module, currently the `routes.py` file.:
-    ```python
+
+   ```python
     import os
 
     from flask import Flask
@@ -134,20 +136,22 @@ You can change the database location to any other directory by changing the `SQL
 
 ## Step 3: Modify the current app code to use the create_app() function
 
-Now that the app is created in the `create_ap()` function, you need to modify the file where you first created the app (e.g. `paralympics_app.py`) to use this.
+Now that the app is created in the `create_ap()` function, you need to modify the file where you first created the app (
+e.g. `paralympics_app.py`) to use this.
 
 A commonly used approach is to define the routes and assign them to a
-Blueprints. [Blueprints](https://flask.palletsprojects.com/en/stable/blueprints/) are a concept or pattern in Flask to
+Blueprint. [Blueprints](https://flask.palletsprojects.com/en/stable/blueprints/) are a concept or pattern in Flask to
 assist in structuring code to make it potentially easier to modularise large applications.
 
 You define a Blueprint and assign routes to it. You then register the Blueprint on the Flask app after it is
 initialised, i.e. in the `create_app()` function.
 
-An alternative to using a Blueprint is to use Flask's `current_app` object to access the configured app. For examples,
+An alternative to using a Blueprint is to use Flask's `current_app` object to access the configured app. For example,
 using `import current_app as app` accesses the current app and names it `app` so that you don't have to change the
-routes which already refer to `@app.`.
+routes which already refer to `@app`.
 
-This approach uses the Blueprint pattern. Change the contents of `routes.py` in the following ways:
+To apply the Blueprint approach in the paralympics app, change the contents of `routes.py` (or whatever file name you
+used for the routes code) in the following ways:
 
 1. Add the import `from flask import Blueprint`
 2. Remove the import `from flask import Flask`
@@ -161,8 +165,8 @@ You should then just have the code that defines the routes, e.g.
 ```python
 from flask import Blueprint
 
-
 main = Blueprint('main', __name__)
+
 
 @main.route('/')
 def index():

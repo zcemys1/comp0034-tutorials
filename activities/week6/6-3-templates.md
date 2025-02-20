@@ -46,7 +46,6 @@ are alternatives to Bootstrap you can explore, try searching `alternatives to Bo
 
 - [Pure.css](https://purecss.io/start/)
 - [Materialize](https://materializecss.com/getting-started.html)
-- [ZURB foundation](https://foundation.zurb.com/)
 
 You can use a CDN (Content Distribution Network) version of Bootstrap, that is a version someone else hosts on their
 server infrastructure. Refer to
