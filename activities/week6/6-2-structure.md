@@ -122,7 +122,7 @@ the `>>>` prompt type `import secrets` and press enter. Then type `secrets.token
 should see a string of 16 characters. Copy this and use it to replace the word 'dev' in
 the SECRET_KEY line in the `create_app()` function.
 
-![Create a SECRET_KEY](../../img/secret_key.png)
+![Create a SECRET_KEY](../img/secret_key.png)
 
 ### `SQLALCHEMY_DATABASE_URI`
 
