@@ -102,16 +102,21 @@ app = Flask(__name__, instance_relative_config=True)
 Try running the app and check for the log file `paralympics-error.log`.
 
 ## 2. Custom error views in Flask
+
 The Flask documentation
 for [handling application errors in Flask](https://flask.palletsprojects.com/en/stable/errorhandling/) explains how to
 add custom errors.
 
-The approach when you use the Application Factory pattern is to:
+You can either decorate a function with `@app.errorhander()` or write a function and then register it using
+`app.register_error_handler()`.
+
+The following approach can be used with the Application Factory pattern:
 
 - Define an error handling function. The function returns a custom error template.
 - Register the error handler within the `create_app()` function.
 
 ### Create a custom 500 error handler
+
 1. Create a template for 500 error
 
     ```jinja
@@ -124,7 +129,7 @@ The approach when you use the Application Factory pattern is to:
     ```
 2. Define the error handler function that overrides the default
 
-    Add the following to `__init__.py` (or elsewhere and import it):
+   Add the following to `__init__.py` (or elsewhere and import it):
 
     ```python
     def internal_server_error(e):
@@ -139,7 +144,7 @@ The approach when you use the Application Factory pattern is to:
         return app
    ```
 
-Try it yourself, add a custom error handler for 404 `page_not_found`.
+Try it yourself, add a custom error handler for `404 Not found` errors.
 
 ## 3. Use Python try / except in routes
 
@@ -220,8 +225,10 @@ For example:
 
 @app.route('/cause-error')
 def cause_error():
-    # Simulate an internal server error
-    abort(500, description="Internal Server Error: Simulated error")
+
+# Simulate an internal server error
+
+abort(500, description="Internal Server Error: Simulated error")
 
 ```python
 @app.delete('/regions/<code>')
@@ -252,9 +259,11 @@ Try and add error handling to some of the routes.
 
 ## Optional: Configure Flask to handle errors and respond in JSON format
 
-If you are writing a REST API or other routes that return JSON then you need to handle the errors by returning JSON instead of views (templates).
+If you are writing a REST API or other routes that return JSON then you need to handle the errors by returning JSON
+instead of views (templates).
 
-The [Flask documentation](https://flask.palletsprojects.com/en/stable/errorhandling/#returning-api-errors-as-json) gives examples for the following:
+The [Flask documentation](https://flask.palletsprojects.com/en/stable/errorhandling/#returning-api-errors-as-json) gives
+examples for the following:
 
 - Handle non-HTTP exceptions as 500 Server error in JSON format
 - Return JSON instead of HTML for HTTP errors.
