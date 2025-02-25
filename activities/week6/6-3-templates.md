@@ -12,7 +12,7 @@ Unlike Dash, in Flask you will have to write the HTML code.
 
 ## Activity: Create a route for the home, or index, page
 
-The home page of a webs app is often referred to as the index.
+The home page of a web app is often referred to as the index.
 
 1. Create a new file called `index.html` in the [templates folder](../../src/student/flask_paralympics/templates) of
    the Flask application. In PyCharm the HTML will be added for you, in VS Code you will have to add it yourself (copy
@@ -23,7 +23,7 @@ The home page of a webs app is often referred to as the index.
 4. Add, or modify, the app route associated with `"/"`
    URL. [See here](https://flask.palletsprojects.com/en/stable/quickstart/#a-minimal-application) for an example, though
    your function should be called `index()` and will return `return render_template('index.html')`
-5. Run the app e.g. `flask --app student.paralympics_flask run --debug`. 
+5. Run the app e.g. `flask --app src.student.flask_paralympics run --debug`
 6. Go to the URL that is shown in the terminal e.g. <http://127.0.0.1:5000>
 7. Check the page displays 'Welcome to HTML!' (or whatever you typed in index.html).
 8. Stop the app using `CTRL+C`
@@ -52,7 +52,7 @@ You can use a CDN (Content Distribution Network) version of Bootstrap, that is a
 server infrastructure. Refer to
 the [Bootstrap documentation for the code you need to add](https://getbootstrap.com/docs/5.3/getting-started/introduction/#quick-start).
 You need an active internet connection while your app is running to use this method. For this activity to avoid any
-issues the current version (as at the time of writing) has been downloaded
+issues, the current version (as at the time of writing) has been downloaded
 from https://getbootstrap.com/docs/5.3/getting-started/download/
 
 Flask apps have a folder named **static**. You place files that don't change while the app is running such as CSS,
@@ -128,7 +128,7 @@ To use Bootstrap in a responsive way, the minimum you need is:
 1. Open `index.html` in the `templates` folder.
 2. In the <head> section before the style sheet
    add: `<meta name="viewport" content="width=device-width, initial-scale=1">`
-3. In the <body> section add a <div> with a Bootstrap container class i.e. add `<div class='container'>` after `<body>`
+3. In the <body> section add a `<div>` with a Bootstrap container class i.e. add `<div class='container'>` after `<body>`
    and `</div>` just before `</body>`
 4. Add a large image within the `<div>` section
    using
