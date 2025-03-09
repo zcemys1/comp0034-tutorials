@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    {% if name %}
+        <h2>Hello {{ name }} and welcome to the Paralympics app!</h2>
+    {% else %}
+        <h2>Welcome to the Paralympics app!</h2>
+    {% endif %}
+{% endblock %}
+

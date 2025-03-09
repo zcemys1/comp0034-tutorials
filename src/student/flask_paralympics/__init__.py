@@ -11,6 +11,8 @@ def create_app(test_config=None):
         SQLALCHEMY_DATABASE_URI="sqlite:///" + os.path.join(app.instance_path, 'paralympics.sqlite'),
     )
 
+
+
     if test_config is None:
         # Load config.py if it exists (for production settings)
         app.config.from_pyfile('config.py', silent=True)
@@ -26,7 +28,8 @@ def create_app(test_config=None):
 
     with app.app_context():
     # Register Blueprint
-        from .routes import main
+        from student.flask_paralympics.routes import main
+
         app.register_blueprint(main)
 
 
